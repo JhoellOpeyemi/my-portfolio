@@ -1,13 +1,87 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* SF Mono Font Type */
+@font-face {
+  font-family: "SFMonoRegular";
+  src: url(fonts/SFMono/SF-Mono-Regular.otf) format("opentype");
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: "SFMonoMedium";
+  src: url(fonts/SFMono/SF-Mono-Medium.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "SFMonoBold";
+  src: url(fonts/SFMono/SF-Mono-Bold.otf) format("opentype");
+}
+
+/* Poppins Font Type */
+@font-face {
+  font-family: "PoppinsRegular";
+  src: url(fonts/Poppins/Poppins-Regular-400.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "PoppinsMedium";
+  src: url(fonts/Poppins/Poppins-Medium-500.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "PoppinsSemiBold";
+  src: url(fonts/Poppins/Poppins-SemiBold-600.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "PoppinsBold";
+  src: url(fonts/Poppins/Poppins-Bold-700.ttf) format("truetype");
+}
+
+:root {
+  --bg-color: #08101d;
+  --nav-bg-color: #010812;
+  --tex-color: #8892b0;
+  --lighter-text-color: #ccd6f6;
+  --pry-color: #83eeff;
+  --hero-heading-text: #dedede;
+
+  --font-size: 1rem;
+
+  --transition-delay: 300ms;
+}
+
+/* General Styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "PoppinsMedium", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--tex-color);
+  font-size: var(--font-size);
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--lighter-text-color);
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 75rem;
+  margin: 0 auto;
 }

@@ -1,0 +1,149 @@
+/* Header Styles */
+.header {
+  font-family: "SFMonoRegular";
+}
+
+.logo-nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  margin: 1rem 0;
+}
+
+.logo {
+  color: var(--pry-color);
+  font-size: 1.25rem;
+  z-index: 2;
+}
+
+/* Nav styles */
+.nav {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--nav-bg-color);
+  width: 100%;
+  height: 100vh;
+  transform: translate(100%);
+  transition: all var(--transition-delay) ease-in-out;
+}
+
+.nav.open {
+  transform: translate(-5%);
+}
+
+.nav.open .nav-link {
+  animation: navLink var(--transition-delay) ease-in-out forwards;
+}
+
+.nav.open .nav-link:first-child {
+  animation-delay: calc(var(--transition-delay) * 1.25);
+}
+
+.nav.open .nav-link:nth-child(2) {
+  animation-delay: calc(var(--transition-delay) * 2.25);
+}
+
+.nav.open .nav-link:nth-child(3) {
+  animation-delay: calc(var(--transition-delay) * 3.25);
+}
+
+.nav.open .nav-link:nth-child(4) {
+  animation-delay: calc(var(--transition-delay) * 4.25);
+}
+
+.nav-link {
+  font-size: 1.375rem;
+  padding: 1rem 0.5rem;
+  opacity: 0;
+  border: 2px solid transparent;
+  transition: all var(--transition-delay) ease-in-out;
+}
+
+.nav-link:hover {
+  border-bottom: 2px solid var(--pry-color);
+}
+
+.nav-link-btn {
+  font-family: "SFMonoRegular";
+  background-color: transparent;
+  border: 1px solid var(--pry-color);
+  border-radius: 0.5rem;
+  color: var(--pry-color);
+  font-size: 1.2rem;
+  padding: 1rem 1.2rem;
+}
+
+.nav-link-btn:hover {
+  background-color: var(--pry-color);
+  border-bottom: 1px solid var(--pry-color);
+  color: var(--bg-color);
+}
+
+.nav-link:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+@keyframes navLink {
+  0% {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hamburger menu styles */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 2.4rem;
+  height: 1.6rem;
+  background-color: transparent;
+  border: none;
+  z-index: 2;
+}
+
+.line {
+  display: inline-block;
+  height: 0.22rem;
+  background-color: var(--pry-color);
+  border-radius: 1.5rem;
+  transition: all calc(var(--transition-delay) * 1.7) ease-in-out;
+}
+
+.line1 {
+  width: 75%;
+}
+
+.line2 {
+  width: 100%;
+}
+
+.line3 {
+  width: 50%;
+}
+
+/* When nav is opened */
+.line1.active {
+  width: 100%;
+  transform: rotate(-45deg) translate(-5px, 10px);
+}
+
+.line2.active {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.line3.active {
+  width: 100%;
+  transform: rotate(45deg) translate(-5px, -10px);
+}
