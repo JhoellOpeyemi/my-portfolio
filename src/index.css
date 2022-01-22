@@ -38,10 +38,10 @@
 :root {
   --bg-color: #08101d;
   --nav-bg-color: #010812;
-  --tex-color: #8892b0;
+  --text-color: #8892b0;
   --lighter-text-color: #ccd6f6;
   --pry-color: #83eeff;
-  --hero-heading-text: #dedede;
+  --hero-heading-text: #d0d5e3;
 
   --font-size: 1rem;
 
@@ -60,9 +60,10 @@ html {
 }
 
 body {
+  position: relative;
   font-family: "PoppinsMedium", sans-serif;
   background-color: var(--bg-color);
-  color: var(--tex-color);
+  color: var(--text-color);
   font-size: var(--font-size);
   overflow-x: hidden;
 }
@@ -82,6 +83,6 @@ p {
 
 .container {
   width: 90%;
-  max-width: 75rem;
+  max-width: 72rem;
   margin: 0 auto;
 }

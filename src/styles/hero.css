@@ -1,5 +1,10 @@
-.main {
-  margin: 3.5rem 0 2rem;
+.main-container {
+  min-height: 77vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 2rem 0 0;
 }
 
 .hero-heading {
@@ -12,6 +17,7 @@
 .hero-desc {
   font-size: 1.375rem;
   margin: 0 0 3rem;
+  width: 100%;
 }
 
 .hero-social-link {
@@ -32,20 +38,89 @@
 }
 
 .hero-social-link:hover svg {
-  transform: translateY(-25%);
+  transform: translateY(-19%);
 }
 
 .email {
   display: flex;
   font-family: "SFMonoMedium";
   color: var(--pry-color);
-  margin: 1rem 0;
+  margin: 1rem 0 0;
 }
 
 .email-arrow {
-  display: inline-block;
-  padding-left: 1rem;
+  width: 1.8rem;
+  transform: translateX(0.6rem);
+  transition: all var(--transition-delay) ease-in-out;
+  z-index: -1;
 }
+
 .email-arrow svg path {
   stroke: var(--pry-color);
+}
+
+.email:hover .email-arrow {
+  transform: translateX(1.2rem);
+}
+
+.section-divider {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2.5rem 0 0;
+}
+
+.divider-line {
+  width: 42%;
+  height: 0.1rem;
+  background-color: var(--pry-color);
+}
+
+.divider-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+/* Style for screen sizes larger than 790px */
+@media screen and (min-width: 49.375rem) {
+  .main-container {
+    min-height: 85vh;
+  }
+
+  .hero-heading {
+    font-size: 3.5rem;
+  }
+
+  .hero-desc {
+    font-size: 1.7rem;
+    max-width: 45rem;
+  }
+
+  .hero-social-link:not(:last-child) {
+    margin-right: 3rem;
+  }
+
+  .hero-social-link svg {
+    width: 2.15rem;
+    height: 2.15rem;
+  }
+
+  .email {
+    font-size: 1.2rem;
+    margin: 2rem 0 0;
+  }
+
+  .section-divider {
+    margin: 3rem 0 0;
+  }
+
+  .divider-line {
+    width: 45%;
+  }
+
+  .divider-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
 }
