@@ -1,0 +1,96 @@
+.about-section {
+  padding: 3rem 0 2rem;
+}
+
+.about-section-heading {
+  font-family: "PoppinsBold";
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: var(--section-heading-text);
+}
+
+.about-section-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin: 1rem 0 0;
+}
+
+.about-desc {
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+}
+
+.about-image {
+  width: 90%;
+  height: 16rem;
+  background-image: url(../assets/my-image.jpeg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  border-radius: 2rem;
+  margin: auto;
+}
+
+.skills-group {
+  margin: 0 0 0 1.5rem;
+  letter-spacing: 2px;
+  color: var(--lighter-text-color);
+}
+
+.skills-heading {
+  font-family: "SFMonoBold";
+  font-size: 1.8rem;
+  margin: 3rem 0 2rem;
+}
+
+.skill {
+  font-family: "SFMonoRegular";
+  display: flex;
+  align-items: center;
+}
+
+.skill:not(:last-child) {
+  margin-bottom: 0.9rem;
+}
+
+.skill-arrow {
+  margin: 0 0.8rem 0 0;
+}
+
+@media screen and (min-width: 31.25rem) {
+  .about-image {
+    width: 80%;
+    height: 19rem;
+    background-image: url(../assets/my-image.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 2rem;
+    margin: auto;
+  }
+}
+
+/* Style for screen sizes larger than 790px */
+@media screen and (min-width: 49.375rem) {
+  .about-section-heading {
+    font-size: 5.3rem;
+  }
+
+  .about-section-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-desc {
+    font-size: var(--desktop-font-size);
+  }
+
+  .about-desc:first-child {
+    margin-top: 2rem;
+  }
+
+  .about-details {
+    padding-left: 3rem;
+  }
+}

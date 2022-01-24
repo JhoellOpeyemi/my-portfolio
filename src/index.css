@@ -42,8 +42,10 @@
   --lighter-text-color: #ccd6f6;
   --pry-color: #83eeff;
   --hero-heading-text: #d0d5e3;
+  --section-heading-text: rgba(131, 238, 255, 0.4);
 
-  --font-size: 1rem;
+  --font-size: 1.125rem;
+  --desktop-font-size: 1.25rem;
 
   --transition-delay: 300ms;
 }
@@ -79,6 +81,10 @@ button {
 
 p {
   line-height: 1.6;
+}
+
+li {
+  list-style: none;
 }
 
 .container {

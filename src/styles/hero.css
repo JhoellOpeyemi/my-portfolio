@@ -73,7 +73,7 @@
 
 .divider-line {
   width: 42%;
-  height: 0.1rem;
+  height: 0.065625rem;
   background-color: var(--pry-color);
 }
 
