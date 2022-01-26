@@ -45,7 +45,7 @@
   --section-heading-text: rgba(131, 238, 255, 0.4);
 
   --font-size: 1.125rem;
-  --desktop-font-size: 1.25rem;
+  --desktop-font-size: 1.2rem;
 
   --transition-delay: 300ms;
 }
@@ -70,6 +70,10 @@ body {
   overflow-x: hidden;
 }
 
+body.noscroll {
+  overflow-y: hidden;
+}
+
 a {
   color: var(--lighter-text-color);
   text-decoration: none;
@@ -91,4 +95,43 @@ li {
   width: 90%;
   max-width: 72rem;
   margin: 0 auto;
+}
+
+.social-link {
+  display: inline-block;
+}
+
+.social-link:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.social-link svg,
+.social-link svg path {
+  transition: all calc(var(--transition-delay) / 1.5) ease-in-out;
+}
+
+.social-link:hover svg path {
+  fill: var(--pry-color);
+}
+
+.social-link:hover svg {
+  transform: translateY(-19%);
+}
+
+.divider-line {
+  width: 42%;
+  height: 0.065625rem;
+  background-color: var(--pry-color);
+}
+
+/* Style for screen sizes larger than 790px */
+@media screen and (min-width: 49.375rem) {
+  .social-link:not(:last-child) {
+    margin-right: 3rem;
+  }
+
+  .social-link svg {
+    width: 2.15rem;
+    height: 2.15rem;
+  }
 }

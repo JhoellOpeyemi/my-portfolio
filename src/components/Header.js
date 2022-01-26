@@ -10,6 +10,8 @@ const Header = () => {
 
   const openNav = () => {
     setNavState(!navState);
+    const body = document.querySelector("body");
+    body.classList.toggle("noscroll");
   };
 
   return (

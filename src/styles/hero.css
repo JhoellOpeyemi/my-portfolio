@@ -20,27 +20,6 @@
   width: 100%;
 }
 
-.hero-social-link {
-  display: inline-block;
-}
-
-.hero-social-link:not(:last-child) {
-  margin-right: 2rem;
-}
-
-.hero-social-link svg,
-.hero-social-link svg path {
-  transition: all calc(var(--transition-delay) / 1.5) ease-in-out;
-}
-
-.hero-social-link:hover svg path {
-  fill: var(--pry-color);
-}
-
-.hero-social-link:hover svg {
-  transform: translateY(-19%);
-}
-
 .email {
   display: flex;
   font-family: "SFMonoMedium";
@@ -69,12 +48,6 @@
   justify-content: space-between;
   align-items: center;
   margin: 2.5rem 0 0;
-}
-
-.divider-line {
-  width: 42%;
-  height: 0.065625rem;
-  background-color: var(--pry-color);
 }
 
 .divider-icon {

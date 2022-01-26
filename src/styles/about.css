@@ -1,5 +1,5 @@
 .about-section {
-  padding: 3rem 0 2rem;
+  padding: 1rem 0 4rem;
 }
 
 .about-section-heading {
@@ -13,7 +13,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  margin: 1rem 0 0;
+  margin: 2rem 0 0;
 }
 
 .about-desc {
@@ -28,7 +28,7 @@
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
-  border-radius: 2rem;
+  border-radius: 1.3rem;
   margin: auto;
 }
 
@@ -41,7 +41,14 @@
 .skills-heading {
   font-family: "SFMonoBold";
   font-size: 1.8rem;
-  margin: 3rem 0 2rem;
+  margin: 3rem 0 1.2rem;
+}
+
+.skills-intro {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin: 0 0 1.6rem;
+  letter-spacing: 1px;
 }
 
 .skill {
@@ -69,6 +76,13 @@
     border-radius: 2rem;
     margin: auto;
   }
+
+  .skills-group {
+    width: 80%;
+    margin: auto;
+    letter-spacing: 2px;
+    color: var(--lighter-text-color);
+  }
 }
 
 /* Style for screen sizes larger than 790px */
@@ -80,6 +94,9 @@
   .about-section-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "details image"
+      "skill skill";
   }
 
   .about-desc {
@@ -92,5 +109,14 @@
 
   .about-details {
     padding-left: 3rem;
+    grid-area: details;
+  }
+
+  .image-wrapper {
+    grid-area: image;
+  }
+
+  .skills-group {
+    grid-area: skill;
   }
 }

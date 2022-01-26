@@ -17,7 +17,7 @@ const Hero = () => {
             href="https://github.com/JhoellOpeyemi"
             target={"_blank"}
             rel="noreferrer"
-            className="hero-social-link github"
+            className="social-link github"
           >
             <svg
               width="30"
@@ -39,7 +39,7 @@ const Hero = () => {
             href="https://twitter.com/JhoellDevIt?t=tCeD7acfEinny3M-1lF0XQ&s=09"
             target={"_blank"}
             rel="noreferrer"
-            className="hero-social-link twitter"
+            className="social-link twitter"
           >
             <svg
               width="30"
@@ -58,7 +58,7 @@ const Hero = () => {
             href="https://instagram.com/jhoell19_?utm_medium=copy_link"
             target={"_blank"}
             rel="noreferrer"
-            className="hero-social-link instagram"
+            className="social-link instagram"
           >
             <svg
               width="30"
@@ -79,7 +79,7 @@ const Hero = () => {
             href="https://www.linkedin.com/in/jhoell-pelumi"
             target={"_blank"}
             rel="noreferrer"
-            className="hero-social-link linkedin"
+            className="social-link linkedin"
           >
             <svg
               width="30"
