@@ -1,26 +1,32 @@
 import React from "react";
 
-const Nav = ({ navState, closeNav }) => {
+const Nav = ({ toggleNav }) => {
   return (
-    <nav className={navState ? "nav open" : "nav"}>
+    <nav className="nav">
       <a
         href="#about"
-        className={navState ? "nav-link open" : "nav-link"}
-        onClick={closeNav}
+        className="nav-link"
+        onClick={() => {
+          toggleNav("closeNav");
+        }}
       >
         About
       </a>
       <a
         href="#projects"
-        className={navState ? "nav-link open" : "nav-link"}
-        onClick={closeNav}
+        className="nav-link"
+        onClick={() => {
+          toggleNav("closeNav");
+        }}
       >
         Projects
       </a>
       <a
-        href="#contacts"
-        className={navState ? "nav-link open" : "nav-link"}
-        onClick={closeNav}
+        href="#contact"
+        className="nav-link"
+        onClick={() => {
+          toggleNav("closeNav");
+        }}
       >
         Contact
       </a>

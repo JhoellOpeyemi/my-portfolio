@@ -126,6 +126,10 @@ li {
 
 /* Style for screen sizes larger than 790px */
 @media screen and (min-width: 49.375rem) {
+  body {
+    font-size: var(--desktop-font-size);
+  }
+
   .social-link:not(:last-child) {
     margin-right: 3rem;
   }

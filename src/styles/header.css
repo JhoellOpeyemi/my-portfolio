@@ -33,40 +33,36 @@
   transition: all var(--transition-delay) ease-in-out;
 }
 
-.nav.open {
+.nav.active {
   transform: translateX(0%);
 }
 
-.nav.open .nav-link {
+.nav.active .nav-link {
   animation: navLink var(--transition-delay) ease-in-out forwards;
 }
 
-.nav.open .nav-link:first-child {
+.nav.active .nav-link:first-child {
   animation-delay: calc(var(--transition-delay) * 1.25);
 }
 
-.nav.open .nav-link:nth-child(2) {
+.nav.active .nav-link:nth-child(2) {
   animation-delay: calc(var(--transition-delay) * 2.25);
 }
 
-.nav.open .nav-link:nth-child(3) {
+.nav.active .nav-link:nth-child(3) {
   animation-delay: calc(var(--transition-delay) * 3.25);
 }
 
-.nav.open .nav-link:nth-child(4) {
+.nav.active .nav-link:nth-child(4) {
   animation-delay: calc(var(--transition-delay) * 4.25);
 }
 
 .nav-link {
+  position: relative;
   font-size: 1.45rem;
-  padding: 1rem 0.5rem;
+  padding: 1rem 0;
   opacity: 0;
-  border: 2px solid transparent;
   transition: all var(--transition-delay) ease-in-out;
-}
-
-.nav-link:hover {
-  border-bottom: 2px solid var(--pry-color);
 }
 
 .nav-link-btn {
@@ -112,6 +108,7 @@
   border: none;
   z-index: 2;
   overflow: hidden;
+  pointer-events: all;
 }
 
 .line {
@@ -120,6 +117,7 @@
   background-color: var(--pry-color);
   border-radius: 1.5rem;
   transition: all calc(var(--transition-delay) * 1.7) ease-in-out;
+  pointer-events: none;
 }
 
 .line1 {
@@ -135,17 +133,17 @@
 }
 
 /* When nav is opened */
-.line1.active {
+.hamburger.open .line1 {
   width: 100%;
   transform: rotate(-45deg) translate(-5px, 10px);
 }
 
-.line2.active {
+.hamburger.open .line2 {
   opacity: 0;
   transform: translateX(100%);
 }
 
-.line3.active {
+.hamburger.open .line3 {
   width: 100%;
   transform: rotate(45deg) translate(-5px, -10px);
 }
@@ -169,8 +167,24 @@
 
   .nav-link {
     font-size: 1.15rem;
-    padding: 0.8rem 0.3rem;
+    padding: 0.4rem 0;
     opacity: 1;
+    margin: 0 0.4rem;
+  }
+
+  .nav-link:not(:last-child):before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 20%;
+    height: 0.1rem;
+    background-color: #83eeffb7;
+    transition: all var(--transition-delay) ease-in-out;
+  }
+
+  .nav-link:hover::before {
+    width: 100%;
   }
 
   .nav-link-btn {

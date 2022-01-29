@@ -22,10 +22,12 @@ const Projects = () => {
         <div className="divider-line"></div>
       </div>
 
+      <p className="projects-subtitle">Some things i've built</p>
+
       <Project
         title={"Covid-19 Tracker"}
         desc={
-          "A web app for tracking the statistics of the coronavirus. Search different countries to view stats and also read coronavirus related news."
+          "A web app for tracking the statistics of the coronavirus. Search different countries to view stats and also read coronavirus related news..."
         }
         techStack={covidProject}
         githubLink={"https://github.com/JhoellOpeyemi/covid-tracker-app"}
@@ -36,7 +38,7 @@ const Projects = () => {
       <Project
         title={"Weather App"}
         desc={
-          "A web app for viewing weather details like humidity, minimum and maximum temperature and more based on location. Users can also search for other cities."
+          "A web app for viewing weather details like humidity, minimum and maximum temperature and more based on location. Users can also search for other cities..."
         }
         techStack={weatherProject}
         githubLink={"https://github.com/JhoellOpeyemi/weather-app"}

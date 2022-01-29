@@ -99,10 +99,6 @@
       "skill skill";
   }
 
-  .about-desc {
-    font-size: var(--desktop-font-size);
-  }
-
   .about-desc:first-child {
     margin-top: 2rem;
   }

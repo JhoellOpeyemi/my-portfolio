@@ -1,0 +1,70 @@
+#contact {
+  text-align: center;
+  padding: 1rem 0.3rem 6rem;
+}
+
+.contact-section-heading {
+  font-family: "PoppinsBold";
+  font-size: 2.6rem;
+  text-transform: uppercase;
+  color: var(--section-heading-text);
+}
+
+.contact-text {
+  line-height: 1.7;
+  padding: 1.7rem 0 3rem;
+  max-width: 39rem;
+  margin: auto;
+}
+
+.contact-btn {
+  display: inline-block;
+  font-size: 1.1rem;
+  transition: all var(--transition-delay) ease-in-out;
+}
+
+.footer {
+  text-align: center;
+  padding: 0 0 2rem;
+}
+
+.footer-text {
+  position: relative;
+  font-family: "SFMonoMedium";
+  color: var(--lighter-text-color);
+}
+
+.footer-text::before {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 40%;
+  height: 0.15rem;
+  background-color: #83eeffb7;
+  transition: all var(--transition-delay) ease-in-out;
+}
+
+.footer-text:hover::before {
+  width: 100%;
+}
+
+/* Style for screen sizes larger than 790px */
+@media screen and (min-width: 49.375rem) {
+  .contact-section-heading {
+    font-size: 4rem;
+  }
+
+  .contact-text {
+    font-size: 1.35rem;
+  }
+
+  .contact-btn {
+    font-size: 1.2rem;
+    padding: 1rem 1.3rem;
+  }
+
+  .footer {
+    font-size: 1.2rem;
+  }
+}
