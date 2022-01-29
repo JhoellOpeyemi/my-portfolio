@@ -28,7 +28,7 @@ const Contact = () => {
           rel="noreferrer"
           className="footer-text"
         >
-          Designed & Developed by JhoellDevIt
+          Designed & Developed by <span>JhoellDevIt</span>
         </a>
       </footer>
     </>

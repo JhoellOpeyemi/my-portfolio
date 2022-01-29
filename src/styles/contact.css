@@ -34,18 +34,23 @@
   color: var(--lighter-text-color);
 }
 
-.footer-text::before {
+.footer-text span {
+  display: inline-block;
+  position: relative;
+}
+
+.footer-text span::before {
   content: "";
   position: absolute;
   bottom: -0.5rem;
   left: 0;
-  width: 40%;
+  width: 50%;
   height: 0.15rem;
   background-color: #83eeffb7;
   transition: all var(--transition-delay) ease-in-out;
 }
 
-.footer-text:hover::before {
+.footer-text span:hover::before {
   width: 100%;
 }
 
