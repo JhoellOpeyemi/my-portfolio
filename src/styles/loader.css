@@ -1,0 +1,17 @@
+.loader-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--nav-bg-color);
+}
+
+.loader {
+  width: 15rem;
+  overflow: visible;
+}
+
+.loader path {
+  fill: var(--pry-color);
+  transform-origin: bottom;
+}

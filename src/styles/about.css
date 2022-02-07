@@ -1,5 +1,6 @@
 .about-section {
   padding: 1rem 0 4rem;
+  overflow: hidden;
 }
 
 .about-section-heading {
@@ -7,13 +8,27 @@
   font-size: 3rem;
   text-transform: uppercase;
   color: var(--section-heading-text);
+  white-space: nowrap;
+}
+
+.about-section-heading.in-view {
+  animation: aboutHeading 6s linear infinite;
+}
+
+@keyframes aboutHeading {
+  0% {
+    transform: translate(-75%, 0);
+  }
+  100% {
+    transform: translate(100%, 0);
+  }
 }
 
 .about-section-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  margin: 2rem 0 0;
+  margin: 1.8rem 0 0;
 }
 
 .about-desc {
@@ -21,15 +36,20 @@
   margin-bottom: 2rem;
 }
 
-.about-image {
-  width: 90%;
-  height: 16rem;
-  background-image: url(../assets/my-image.jpeg);
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
-  border-radius: 1.3rem;
+.image-wrapper {
+  width: 15rem;
+  height: 15rem;
+  overflow: hidden;
+  border-radius: 50%;
   margin: auto;
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.5);
+  transform-origin: top;
 }
 
 .skills-group {
@@ -88,7 +108,20 @@
 /* Style for screen sizes larger than 790px */
 @media screen and (min-width: 49.375rem) {
   .about-section-heading {
-    font-size: 5.3rem;
+    font-size: 6rem;
+  }
+
+  .about-section-heading.in-view {
+    animation: aboutHeading 8s linear infinite;
+  }
+
+  @keyframes aboutHeading {
+    0% {
+      transform: translate(-45%, 0);
+    }
+    100% {
+      transform: translate(100%, 0);
+    }
   }
 
   .about-section-grid {

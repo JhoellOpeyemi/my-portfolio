@@ -42,12 +42,14 @@
   --lighter-text-color: #ccd6f6;
   --pry-color: #83eeff;
   --hero-heading-text: #d0d5e3;
-  --section-heading-text: rgba(131, 238, 255, 0.4);
+  --section-heading-text: rgba(131, 238, 255, 0.28);
 
   --font-size: 1.125rem;
   --desktop-font-size: 1.2rem;
 
   --transition-delay: 300ms;
+  --animation-duration: 0.8s;
+  --animation-delay: 250ms;
 }
 
 /* General Styles */
@@ -95,6 +97,7 @@ li {
   width: 90%;
   max-width: 72rem;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .social-link {

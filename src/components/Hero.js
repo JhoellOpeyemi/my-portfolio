@@ -1,23 +1,96 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import "../styles/hero.css";
 
 const Hero = () => {
+  const mainContainerVariants = {
+    hidden: {
+      x: "120%",
+    },
+    visible: {
+      x: 0,
+      transition: {
+        delay: 1,
+        when: "beforeChildren",
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const titleVariants = {
+    hidden: {
+      opacity: 0,
+      y: "30%",
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.4,
+      },
+    },
+  };
+
+  const subtitleVariants = {
+    hidden: {
+      opacity: 0,
+      y: "5%",
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        // duration: 0.4,
+      },
+    },
+  };
+
+  const linkVariants = {
+    hidden: {
+      opacity: 0,
+      y: "-5%",
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.1 },
+    },
+  };
+
+  const emailVariants = {
+    hidden: {
+      transform: "scaleX(0)",
+    },
+    visible: {
+      transform: "scaleX(1)",
+    },
+  };
+
   return (
     <main className="main">
-      <div className="main-container">
-        <h1 className="hero-heading">Ogungbemi Oluwapelumi</h1>
-        <p className="hero-desc">
+      <motion.div
+        className="main-container"
+        variants={mainContainerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <h1 className="hero-heading">
+          <motion.span variants={titleVariants}>Ogungbemi</motion.span>{" "}
+          <motion.span variants={titleVariants}> Oluwapelumi</motion.span>{" "}
+        </h1>
+        <motion.p className="hero-desc" variants={subtitleVariants}>
           I'm a frontend web developer specializing in building user friendly
           and exceptional digital experiences on the web.
-        </p>
+        </motion.p>
 
         <div className="hero-socials">
-          <a
+          <motion.a
             href="https://github.com/JhoellOpeyemi"
             target={"_blank"}
             rel="noreferrer"
             className="social-link github"
+            variants={linkVariants}
           >
             <svg
               width="30"
@@ -33,13 +106,14 @@ const Hero = () => {
                 fill="#BFBFBF"
               />
             </svg>
-          </a>
+          </motion.a>
 
-          <a
+          <motion.a
             href="https://twitter.com/JhoellDevIt?t=tCeD7acfEinny3M-1lF0XQ&s=09"
             target={"_blank"}
             rel="noreferrer"
             className="social-link twitter"
+            variants={linkVariants}
           >
             <svg
               width="30"
@@ -53,12 +127,13 @@ const Hero = () => {
                 fill="#BFBFBF"
               />
             </svg>
-          </a>
-          <a
+          </motion.a>
+          <motion.a
             href="https://instagram.com/jhoell19_?utm_medium=copy_link"
             target={"_blank"}
             rel="noreferrer"
             className="social-link instagram"
+            variants={linkVariants}
           >
             <svg
               width="30"
@@ -74,12 +149,13 @@ const Hero = () => {
                 fill="#BFBFBF"
               />
             </svg>
-          </a>
-          <a
+          </motion.a>
+          <motion.a
             href="https://www.linkedin.com/in/jhoell-pelumi"
             target={"_blank"}
             rel="noreferrer"
             className="social-link linkedin"
+            variants={linkVariants}
           >
             <svg
               width="30"
@@ -95,14 +171,15 @@ const Hero = () => {
                 fill="#BFBFBF"
               />
             </svg>
-          </a>
+          </motion.a>
         </div>
 
-        <a
+        <motion.a
           href="mailto:jhoellpelumi@gmail.com"
           target={"_blank"}
           rel="noreferrer"
           className="email"
+          variants={emailVariants}
         >
           jhoellpelumi@gmail.com{" "}
           <svg
@@ -121,7 +198,7 @@ const Hero = () => {
               strokeLinejoin="round"
             />
           </svg>
-        </a>
+        </motion.a>
 
         <div className="section-divider">
           <div className="divider-line divider-line1"></div>
@@ -151,7 +228,7 @@ const Hero = () => {
 
           <div className="divider-line divider-line2"></div>
         </div>
-      </div>
+      </motion.div>
     </main>
   );
 };

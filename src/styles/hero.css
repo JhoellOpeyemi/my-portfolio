@@ -1,5 +1,5 @@
 .main-container {
-  min-height: 77vh;
+  min-height: 75vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,6 +14,11 @@
   margin: 0 0 2rem;
 }
 
+.hero-heading span {
+  transform-origin: left;
+  display: inline-block;
+}
+
 .hero-desc {
   font-size: 1.375rem;
   margin: 0 0 3rem;
@@ -22,6 +27,7 @@
 
 .email {
   display: flex;
+  transform-origin: left;
   font-family: "SFMonoMedium";
   color: var(--pry-color);
   margin: 1rem 0 0;

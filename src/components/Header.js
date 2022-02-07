@@ -1,9 +1,27 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import Nav from "./Nav";
 
 // stylesheet import
 import "../styles/header.css";
+
+const headerVariants = {
+  hidden: {},
+  visible: {},
+};
+
+const hamburgerVariants = {
+  hidden: {
+    x: "200%",
+  },
+  visible: {
+    x: 0,
+    transition: {
+      delay: 0.7,
+    },
+  },
+};
 
 const Header = () => {
   const toggleNav = (par) => {
@@ -24,24 +42,30 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div className="logo-nav-wrapper">
-        <a href="/" className="logo">
+      <motion.div
+        className="logo-nav-wrapper"
+        variants={headerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.a href="/" className="logo">
           JhoellDevIt
-        </a>
+        </motion.a>
 
         <Nav toggleNav={toggleNav} />
 
-        <button
+        <motion.button
           className="hamburger"
           onClick={() => {
             toggleNav("openNav");
           }}
+          variants={hamburgerVariants}
         >
           <span className="line line1"></span>
           <span className="line line2"></span>
           <span className="line line3"></span>
-        </button>
-      </div>
+        </motion.button>
+      </motion.div>
     </header>
   );
 };
