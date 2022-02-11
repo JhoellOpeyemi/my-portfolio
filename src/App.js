@@ -6,8 +6,15 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Loader from "./components/Loader";
+import ProjectDetails from "./components/ProjectDetails";
+
+// import project images
+import covidProjectImage from "./assets/covid-tracker.PNG";
+import weatherProjectImage from "./assets/weather-app.PNG";
 
 import { motion } from "framer-motion";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -29,23 +36,69 @@ function App() {
       },
     },
   };
+
+  const covidProjectObject = {
+    title: "Covid-19 Tracker",
+    desc: "A web app for tracking the statistics of the coronavirus. Search different countries to view stats and also read coronavirus related news.",
+    stack: ["React", "React-Router", "Chart.js", "CSS"],
+    image: covidProjectImage,
+    githubLink: "https://github.com/JhoellOpeyemi/covid-tracker-app",
+    siteLink: "https://jhoell-track-covid.netlify.app/",
+    urlTitle: function () {
+      return this.title.split(" ").join("-").toLowerCase();
+    },
+  };
+
+  const weatherProjectObject = {
+    title: "Weather App",
+    desc: "A web app for viewing weather details like humidity, minimum and maximum temperature and more based on location. Users can also search for other cities.",
+    stack: ["React", "CSS", "WeatherBit API"],
+    image: weatherProjectImage,
+    githubLink: "https://github.com/JhoellOpeyemi/weather-app",
+    siteLink: "https://jhoell-weather-app.netlify.app/",
+    urlTitle: function () {
+      return this.title.split(" ").join("-").toLowerCase();
+    },
+  };
+
   return (
     <>
       {loading ? (
         <Loader />
       ) : (
-        <motion.div
-          className="container"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <Header />
-          <Hero />
-          <About />
-          <Projects />
-          <Contact />
-        </motion.div>
+        <Router>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <motion.div
+                  className="container"
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate="visible"
+                >
+                  <Header />
+                  <Hero />
+                  <About />
+                  <Projects
+                    covidProject={covidProjectObject}
+                    weatherProject={weatherProjectObject}
+                  />
+                  <Contact />
+                </motion.div>
+              }
+            />{" "}
+            <Route
+              path="/:project"
+              element={
+                <ProjectDetails
+                  covidProject={covidProjectObject}
+                  weatherProject={weatherProjectObject}
+                />
+              }
+            />
+          </Routes>
+        </Router>
       )}
     </>
   );

@@ -1,21 +1,58 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-const Project = ({
-  title,
-  desc,
-  techStack,
-  githubLink,
-  siteLink,
-  projectImage,
-}) => {
+// import useInView hook - used to monitor elements and know when they are in the viewport
+import { useInView } from "react-intersection-observer";
+
+// import motion -for animating elements, useAnimation - used with useInView for starting animations when elements are in the viewport
+import { motion, useAnimation } from "framer-motion";
+
+import { Link } from "react-router-dom";
+
+const Project = ({ title, desc, stack, githubLink, siteLink, image }) => {
+  const { ref: projectRef, inView: projectInView } = useInView({
+    threshold: 0.42,
+  });
+
+  const projectDetailAnimation = useAnimation();
+  const projectImageAnimation = useAnimation();
+
+  const projectDetailVariants = {
+    hidden: { opacity: 0, y: "20%" },
+    visible: {
+      opacity: 1,
+      y: "0%",
+      transition: { delay: 0.2 },
+    },
+  };
+
+  const projectImageVariants = {
+    hidden: { opacity: 0, x: "70%" },
+    visible: {
+      opacity: 1,
+      x: "0%",
+      transition: { delay: 0.4, duration: 0.5 },
+    },
+  };
+
+  useEffect(() => {
+    if (projectInView) {
+      projectDetailAnimation.start(projectDetailVariants.visible);
+      projectImageAnimation.start(projectImageVariants.visible);
+    } else {
+      projectDetailAnimation.start(projectDetailVariants.hidden);
+      projectImageAnimation.start(projectImageVariants.hidden);
+    }
+  });
+
+  const urlTitle = title.split(" ").join("-").toLowerCase();
+
   return (
-    <div className="project-wrapper">
-      <div className="project-details-group">
-        <img
-          src={projectImage}
-          alt="Project"
-          className="project-details-image"
-        />
+    <div className="project-wrapper" ref={projectRef}>
+      <motion.div
+        className="project-details-group"
+        animate={projectDetailAnimation}
+      >
+        <img src={image} alt="Project" className="project-details-image" />
         <div className="projects-details-image-overlay"></div>
         <div className="project-details">
           <h4 className="project-title">
@@ -24,10 +61,13 @@ const Project = ({
             </a>
           </h4>
           <p className="project-desc">{desc}</p>
+          <Link to={`/${urlTitle}`} className="read-more-btn">
+            Read More
+          </Link>
 
           <div className="tech-stack">
-            {techStack.map((stack) => {
-              return <span key={stack}>{stack}</span>;
+            {stack.map((tech) => {
+              return <span key={tech}>{tech}</span>;
             })}
           </div>
 
@@ -92,12 +132,12 @@ const Project = ({
             </a>
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="project-image">
+      <motion.div className="project-image" animate={projectImageAnimation}>
         <div className="project-image-overlay"></div>
-        <img src={projectImage} alt="Project" />
-      </div>
+        <img src={image} alt="Project" />
+      </motion.div>
     </div>
   );
 };

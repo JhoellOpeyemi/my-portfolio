@@ -97,7 +97,14 @@ span.projects {
 
 .project-desc {
   line-height: 1.7;
-  margin: 2rem 0 1.5rem;
+  margin: 2rem 0 0.5rem;
+}
+
+.read-more-btn {
+  display: inline-block;
+  font-size: 1.1rem;
+  color: var(--read-more-btn);
+  padding: 0 0 2rem;
 }
 
 .tech-stack span {
@@ -123,6 +130,65 @@ span.projects {
 
 .project-image {
   display: none;
+}
+
+.go-back-btn {
+  position: absolute;
+  top: -3rem;
+  left: 5%;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: none;
+  border: none;
+}
+
+.go-back-btn svg {
+  fill: var(--lighter-text-color);
+}
+
+.project-detail-section {
+  width: 90%;
+  max-width: 72rem;
+  margin: 5.5rem auto 0;
+  overflow: hidden;
+}
+
+.project-detail-title {
+  color: var(--lighter-text-color);
+}
+
+.project-detail-desc {
+  padding: 1.3rem 0;
+}
+
+.project-details-text p {
+  padding: 0.8rem 0;
+}
+
+.links-heading {
+  font-size: 1.3rem;
+}
+
+.links-group li {
+  margin: 0.5rem 0 0;
+}
+
+.project-detail-image-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  overflow-x: scroll;
+  background-color: var(--lighter-text-color);
+  padding: 1rem;
+  margin: 2rem 0;
+  border-radius: 0.5rem;
+}
+
+.project-detail-image {
+  width: 100%;
+  border-radius: 0.5rem;
 }
 
 @media screen and (min-width: 31.25rem) {

@@ -86,15 +86,9 @@
 }
 
 @media screen and (min-width: 31.25rem) {
-  .about-image {
-    width: 80%;
+  .image-wrapper {
+    width: 19rem;
     height: 19rem;
-    background-image: url(../assets/my-image.jpeg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    border-radius: 2rem;
-    margin: auto;
   }
 
   .skills-group {

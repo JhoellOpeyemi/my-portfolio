@@ -1,11 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
+
+// import useInView hook - used to monitor elements and know when they are in the viewport
+import { useInView } from "react-intersection-observer";
+
+// import motion -for animating elements, useAnimation - used with useInView for starting animations when elements are in the viewport
+import { motion, useAnimation } from "framer-motion";
 
 import "../styles/contact.css";
 
 const Contact = () => {
+  const { ref: contactRef, inView: contactInView } = useInView({
+    threshold: 0.4,
+  });
+
+  const contactAnimation = useAnimation();
+
+  const contactVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
+
+  useEffect(() => {
+    if (contactInView) {
+      contactAnimation.start(contactVariants.visible);
+    } else {
+      contactAnimation.start(contactVariants.hidden);
+    }
+  });
   return (
     <>
-      <section id="contact">
+      <motion.section
+        id="contact"
+        ref={contactRef}
+        variants={contactVariants}
+        animate={contactAnimation}
+      >
         <h3 className="contact-section-heading">Get in touch</h3>
         <p className="contact-text">
           You have a project you want us to work on or you just want us to grab
@@ -19,7 +48,7 @@ const Contact = () => {
         >
           Leave A Message
         </a>
-      </section>
+      </motion.section>
 
       <footer className="footer">
         <a

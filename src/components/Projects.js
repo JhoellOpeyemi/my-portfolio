@@ -1,18 +1,61 @@
-import React from "react";
+import React, { useEffect } from "react";
 
+// import useInView hook - used to monitor elements and know when they are in the viewport
+import { useInView } from "react-intersection-observer";
+
+// import motion -for animating elements, useAnimation - used with useInView for starting animations when elements are in the viewport
+import { motion, useAnimation } from "framer-motion";
+
+// import project component
 import Project from "./Project";
+
+// import  stylesheet
 import "../styles/projects.css";
 
-import covidProjectImage from "../assets/covid-tracker.PNG";
-import weatherProjectImage from "../assets/weather-app.PNG";
+const Projects = ({ covidProject, weatherProject }) => {
+  const { ref: projectSectionRef, inView: projectSectionInView } = useInView({
+    threshold: 0.3,
+  });
 
-const Projects = () => {
-  // Tech stack for projects
-  const covidProject = ["React", "React-Router", "Chart.js", "CSS"];
-  const weatherProject = ["React", "CSS", "WeatherBit API"];
+  const projectSectionAnimation = useAnimation();
+  const projectSubtitleAnimation = useAnimation();
+
+  const projectSectionVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const projectSubtitleVariants = {
+    hidden: { opacity: 0, y: "20%" },
+    visible: {
+      opacity: 1,
+      y: "0%",
+      transition: { delay: 0.15 },
+    },
+  };
+
+  useEffect(() => {
+    if (projectSectionInView) {
+      projectSectionAnimation.start(projectSectionVariants.visible);
+      projectSubtitleAnimation.start(projectSubtitleVariants.visible);
+    } else {
+      projectSectionAnimation.start(projectSectionVariants.hidden);
+      projectSubtitleAnimation.start(projectSubtitleVariants.hidden);
+    }
+  });
 
   return (
-    <section id="projects">
+    <motion.section
+      id="projects"
+      ref={projectSectionRef}
+      variants={projectSectionVariants}
+      animate={projectSectionAnimation}
+    >
       <div className="projects-heading-group">
         <h3 className="projects-section-heading">
           {" "}
@@ -22,30 +65,18 @@ const Projects = () => {
         <div className="divider-line"></div>
       </div>
 
-      <p className="projects-subtitle">Some things i've built</p>
+      <motion.p
+        className="projects-subtitle"
+        variants={projectSubtitleVariants}
+        animate={projectSubtitleAnimation}
+      >
+        Some things i've built
+      </motion.p>
 
-      <Project
-        title={"Covid-19 Tracker"}
-        desc={
-          "A web app for tracking the statistics of the coronavirus. Search different countries to view stats and also read coronavirus related news..."
-        }
-        techStack={covidProject}
-        githubLink={"https://github.com/JhoellOpeyemi/covid-tracker-app"}
-        siteLink={"https://jhoell-track-covid.netlify.app/"}
-        projectImage={covidProjectImage}
-      />
+      <Project {...covidProject} />
 
-      <Project
-        title={"Weather App"}
-        desc={
-          "A web app for viewing weather details like humidity, minimum and maximum temperature and more based on location. Users can also search for other cities..."
-        }
-        techStack={weatherProject}
-        githubLink={"https://github.com/JhoellOpeyemi/weather-app"}
-        siteLink={"https://jhoell-weather-app.netlify.app/"}
-        projectImage={weatherProjectImage}
-      />
-    </section>
+      <Project {...weatherProject} />
+    </motion.section>
   );
 };
 
