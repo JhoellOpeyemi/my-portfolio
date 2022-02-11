@@ -14,7 +14,7 @@ import "../styles/projects.css";
 
 const Projects = ({ covidProject, weatherProject }) => {
   const { ref: projectSectionRef, inView: projectSectionInView } = useInView({
-    threshold: 0.3,
+    threshold: 0.2,
   });
 
   const projectSectionAnimation = useAnimation();

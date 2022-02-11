@@ -1,6 +1,7 @@
 import React from "react";
 
 import { useParams } from "react-router-dom";
+import { motion } from "framer-motion";
 
 import covidImage1 from "../assets/covid1.png";
 import covidImage2 from "../assets/covid2.png";
@@ -32,6 +33,20 @@ const ProjectDetails = ({ covidProject, weatherProject }) => {
   const goBack = () => {
     window.history.back();
   };
+
+  const projectDetailsVariants = {
+    hidden: {
+      opacity: 0,
+      x: "100%",
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "tween",
+      },
+    },
+  };
   return (
     <>
       <button className="go-back-btn" onClick={goBack}>
@@ -41,7 +56,12 @@ const ProjectDetails = ({ covidProject, weatherProject }) => {
       </button>
 
       {params.project === covidProject.urlTitle() ? (
-        <div className="project-detail-section">
+        <motion.div
+          className="project-detail-section"
+          variants={projectDetailsVariants}
+          initial="hidden"
+          animate="visible"
+        >
           <h2 className="project-detail-title">{covidProjectTitle}</h2>
           <p className="project-detail-desc">{covidProjectDesc}</p>
 
@@ -61,7 +81,7 @@ const ProjectDetails = ({ covidProject, weatherProject }) => {
               <h5 className="links-heading">Links:</h5>
               <li>
                 <a
-                  href={covidProject.siteLink}
+                  href={covidProjectSiteLink}
                   target={"_blank"}
                   rel="noreferrer"
                 >
@@ -70,7 +90,7 @@ const ProjectDetails = ({ covidProject, weatherProject }) => {
               </li>
               <li>
                 <a
-                  href={covidProject.githubLink}
+                  href={covidProjectGithubLink}
                   target={"_blank"}
                   rel="noreferrer"
                 >
@@ -92,9 +112,14 @@ const ProjectDetails = ({ covidProject, weatherProject }) => {
               safe.
             </p>
           </div>
-        </div>
+        </motion.div>
       ) : params.project === weatherProject.urlTitle() ? (
-        <div className="project-detail-section">
+        <motion.div
+          className="project-detail-section"
+          variants={projectDetailsVariants}
+          initial="hidden"
+          animate="visible"
+        >
           <h2 className="project-detail-title">{weatherProjectTitle}</h2>
           <p className="project-detail-desc">{weatherProjectDesc}</p>
 
@@ -116,7 +141,7 @@ const ProjectDetails = ({ covidProject, weatherProject }) => {
               <h5 className="links-heading">Links:</h5>
               <li>
                 <a
-                  href={weatherProject.siteLink}
+                  href={weatherProjectSiteLink}
                   target={"_blank"}
                   rel="noreferrer"
                 >
@@ -125,7 +150,7 @@ const ProjectDetails = ({ covidProject, weatherProject }) => {
               </li>
               <li>
                 <a
-                  href={weatherProject.githubLink}
+                  href={weatherProjectGithubLink}
                   target={"_blank"}
                   rel="noreferrer"
                 >
@@ -149,7 +174,7 @@ const ProjectDetails = ({ covidProject, weatherProject }) => {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
       ) : (
         ""
       )}

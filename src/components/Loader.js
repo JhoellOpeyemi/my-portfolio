@@ -43,7 +43,7 @@ const Loader = () => {
         "95%",
         "100%",
       ],
-      scale: 1.4,
+      scale: 1.1,
 
       transition: {
         type: "spring",
