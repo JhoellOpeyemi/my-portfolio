@@ -5,15 +5,13 @@ import "../styles/hero.css";
 
 const Hero = () => {
   const mainContainerVariants = {
-    hidden: {
-      x: "120%",
-    },
+    hidden: { opacity: 0 },
     visible: {
-      x: 0,
+      opacity: 1,
       transition: {
-        delay: 1,
+        delay: 0.8,
         when: "beforeChildren",
-        staggerChildren: 0.3,
+        staggerChildren: 0.38,
       },
     },
   };
@@ -21,13 +19,13 @@ const Hero = () => {
   const titleVariants = {
     hidden: {
       opacity: 0,
-      y: "30%",
+      y: "40%",
     },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.4,
+        duration: 0.5,
       },
     },
   };
@@ -35,13 +33,13 @@ const Hero = () => {
   const subtitleVariants = {
     hidden: {
       opacity: 0,
-      y: "5%",
+      y: "10%",
     },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        // duration: 0.4,
+        duration: 0.5,
       },
     },
   };
@@ -54,7 +52,7 @@ const Hero = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.1 },
+      transition: { duration: 0.2 },
     },
   };
 
@@ -65,6 +63,25 @@ const Hero = () => {
     visible: {
       transform: "scaleX(1)",
     },
+  };
+
+  const dividerVariants = {
+    hidden: {
+      scaleX: 0,
+    },
+    visible: {
+      scaleX: 1,
+      transition: {
+        duration: 0.6,
+      },
+    },
+  };
+
+  const dividerIconVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: { opacity: 1 },
   };
 
   return (
@@ -80,8 +97,8 @@ const Hero = () => {
           <motion.span variants={titleVariants}> Oluwapelumi</motion.span>{" "}
         </h1>
         <motion.p className="hero-desc" variants={subtitleVariants}>
-          I'm a frontend web developer specializing in building user friendly
-          and exceptional digital experiences on the web.
+          I'm a frontend developer specializing in building user friendly and
+          exceptional digital experiences on the web.
         </motion.p>
 
         <div className="hero-socials">
@@ -201,14 +218,18 @@ const Hero = () => {
         </motion.a>
 
         <div className="section-divider">
-          <div className="divider-line divider-line1"></div>
-          <svg
+          <motion.div
+            className="divider-line divider-line1"
+            variants={dividerVariants}
+          ></motion.div>
+          <motion.svg
             width="32"
             height="32"
             viewBox="0 0 32 32"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             className="divider-icon"
+            variants={dividerIconVariants}
           >
             <path
               d="M5.33325 9.33334C5.33325 8.62609 5.6142 7.94782 6.1143 7.44772C6.6144 6.94762 7.29267 6.66667 7.99992 6.66667H23.9999C24.7072 6.66667 25.3854 6.94762 25.8855 7.44772C26.3856 7.94782 26.6666 8.62609 26.6666 9.33334V21.3333H5.33325V9.33334Z"
@@ -224,9 +245,12 @@ const Hero = () => {
               strokeLinecap="round"
               strokeLinejoin="round"
             />
-          </svg>
+          </motion.svg>
 
-          <div className="divider-line divider-line2"></div>
+          <motion.div
+            className="divider-line divider-line2"
+            variants={dividerVariants}
+          ></motion.div>
         </div>
       </motion.div>
     </main>

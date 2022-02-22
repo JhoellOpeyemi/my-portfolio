@@ -17,7 +17,7 @@ import Skill from "./Skill";
 const About = () => {
   // destructure the useInView hook to get the ref and inView properties - this ref and inView is used the about section
   const { ref, inView } = useInView({
-    threshold: 0.2,
+    threshold: 0.15,
   });
 
   // destructure the useInView hook to get the ref and inView properties, then rename the variables to aboutGridRef and aboutGridInview respectively - this aboutGridRef and aboutGridInview is used to the grid section in about section
@@ -74,7 +74,7 @@ const About = () => {
       scale: 1,
       transition: {
         duration: 0.4,
-        delay: 0.5,
+        delay: 0.35,
       },
     },
   };
@@ -82,7 +82,11 @@ const About = () => {
   // create variants object for the skills list in the grid section in the about section
   const skillItem = {
     hidden: { opacity: 0, x: "-30%" },
-    visible: { opacity: 1, x: "0%" },
+    visible: {
+      opacity: 1,
+      x: "0%",
+      transition: { type: "spring", duration: 0.8 },
+    },
   };
 
   useEffect(() => {
@@ -144,11 +148,17 @@ const About = () => {
               things that live on the web.{" "}
             </p>
             <p className="about-desc">
-              I'm a frontend developer based in Lagos, Nigeria. Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Harum, tempora! Lorem
-              ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
-              recusandae quisquam voluptas aperiam porro architecto sint dolorum
-              obcaecati, eaque alias!
+              A frontend developer based in Lagos, Nigeria. I'm obsessed with
+              making things and even more obsessed with making things better. My
+              interest however extends beyond the web and I love helping people.
+            </p>
+            <p className="about-desc">
+              When I'm not designing or developing, I'm probably reading,
+              researching or hanging out with friends.
+            </p>
+            <p className="about-desc">
+              My goal is to build fast, user-friendly, mobile-first web
+              applications that clearly communicate with users
             </p>
           </motion.div>
 

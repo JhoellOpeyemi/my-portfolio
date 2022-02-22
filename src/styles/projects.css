@@ -1,5 +1,5 @@
 #projects {
-  padding: 3rem 0 0;
+  padding: 7rem 0 0;
 }
 
 .projects-heading-group {
@@ -101,10 +101,25 @@ span.projects {
 }
 
 .read-more-btn {
+  position: relative;
   display: inline-block;
   font-size: 1.1rem;
   color: var(--read-more-btn);
-  padding: 0 0 2rem;
+  margin: 0 0 2rem;
+}
+
+.read-more-btn::before {
+  content: "";
+  position: absolute;
+  bottom: -0.1rem;
+  width: 60%;
+  height: 0.06rem;
+  background-color: var(--read-more-btn);
+  transition: all var(--transition-delay) ease-in-out;
+}
+
+.read-more-btn:hover::before {
+  width: 100%;
 }
 
 .tech-stack span {
@@ -157,6 +172,7 @@ span.projects {
 
 .project-detail-title {
   color: var(--lighter-text-color);
+  font-size: 1.9rem;
 }
 
 .project-detail-desc {
@@ -165,6 +181,10 @@ span.projects {
 
 .project-details-text p {
   padding: 0.8rem 0;
+}
+
+.links-group {
+  margin: 1.5rem 0;
 }
 
 .links-heading {
@@ -223,6 +243,15 @@ span.projects {
   .projects-subtitle {
     font-size: 1.7rem;
     margin: 3rem 0 5rem;
+  }
+
+  .project-detail-title {
+    font-size: 2.3rem;
+  }
+
+  .project-detail-desc,
+  .project-details-text p {
+    font-size: 1.25rem;
   }
 }
 

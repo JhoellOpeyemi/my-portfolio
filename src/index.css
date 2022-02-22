@@ -95,6 +95,7 @@ li {
 }
 
 .container {
+  position: relative;
   width: 90%;
   max-width: 72rem;
   margin: 0 auto;

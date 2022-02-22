@@ -21,7 +21,7 @@ const Project = ({ title, desc, stack, githubLink, siteLink, image }) => {
     visible: {
       opacity: 1,
       y: "0%",
-      transition: { delay: 0.2 },
+      transition: { delay: 0.2, duration: 0.4 },
     },
   };
 

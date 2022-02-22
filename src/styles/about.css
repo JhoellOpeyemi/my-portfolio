@@ -1,5 +1,5 @@
 .about-section {
-  padding: 1rem 0 4rem;
+  padding: 5.6rem 0 4rem;
   overflow: hidden;
 }
 
@@ -33,7 +33,7 @@
 
 .about-desc {
   letter-spacing: 1px;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .image-wrapper {
@@ -100,7 +100,7 @@
 }
 
 /* Style for screen sizes larger than 790px */
-@media screen and (min-width: 49.375rem) {
+@media screen and (min-width: 53.7rem) {
   .about-section-heading {
     font-size: 6rem;
   }

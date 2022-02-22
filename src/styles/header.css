@@ -1,13 +1,18 @@
 /* Header Styles */
 .header {
   font-family: "SFMonoRegular";
+  position: fixed;
+  z-index: 2;
+  width: 90%;
+  max-width: 72rem;
+  background-color: var(--bg-color);
 }
 
 .logo-nav-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 10vh;
+  height: 8.6vh;
   margin: 1.5rem 0 1rem;
 }
 
@@ -18,12 +23,15 @@
 }
 
 /* Nav styles */
-.nav {
+.desktop-nav {
+  display: none;
+}
+
+.mobile-nav {
   position: fixed;
   top: 0;
   left: 0;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: var(--nav-bg-color);
@@ -34,28 +42,37 @@
   z-index: 2;
 }
 
-.nav.active {
+.mobile-nav.active {
   transform: translateY(0%);
 }
 
-.nav.active .nav-link {
-  animation: navLink var(--transition-delay) ease-in-out forwards;
+.mobile-nav p {
+  font-size: 1.6rem;
+  padding: 0 2rem;
+  text-align: center;
+  line-height: 2;
+  font-family: PoppinsSemiBold;
+  letter-spacing: 1px;
+  overflow: hidden;
 }
 
-.nav.active .nav-link:first-child {
-  animation-delay: calc(var(--animation-delay) * 1.5);
+.mobile-nav-link {
+  position: relative;
+  display: inline-block;
+  font-family: SFMonoMedium;
 }
 
-.nav.active .nav-link:nth-child(2) {
-  animation-delay: calc(var(--animation-delay) * 2.5);
+.mobile-nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0.4rem;
+  width: 100%;
+  height: 0.07rem;
+  background-color: var(--lighter-text-color);
 }
 
-.nav.active .nav-link:nth-child(3) {
-  animation-delay: calc(var(--animation-delay) * 3.5);
-}
-
-.nav.active .nav-link:nth-child(4) {
-  animation-delay: calc(var(--animation-delay) * 4.5);
+.mobile-nav-span {
+  display: inline-block;
 }
 
 .nav-link {
@@ -153,17 +170,27 @@
 @media screen and (min-width: 49.375rem) {
   /* Nav styles */
   .nav {
-    position: static;
-    top: 0;
+    background-color: transparent;
+    transform: translate(0);
+    transition: all var(--transition-delay) ease-in-out;
+    overflow: hidden;
+  }
+
+  .desktop-nav {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    background-color: transparent;
     width: 100%;
     height: 100%;
-    transform: translate(0);
-    transition: all var(--transition-delay) ease-in-out;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+
+  .logo-nav-wrapper {
+    height: 10vh;
   }
 
   .nav-link {

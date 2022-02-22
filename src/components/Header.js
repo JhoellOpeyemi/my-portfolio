@@ -18,7 +18,8 @@ const hamburgerVariants = {
   visible: {
     x: 0,
     transition: {
-      delay: 0.7,
+      duration: 0.3,
+      delay: 0.5,
     },
   },
 };
@@ -26,16 +27,16 @@ const hamburgerVariants = {
 const Header = () => {
   const toggleNav = (par) => {
     const body = document.querySelector("body");
-    const nav = document.querySelector("nav");
+    const mobileNav = document.querySelector(".mobile-nav");
     const button = document.querySelector(".hamburger");
 
     if (par === "openNav") {
       body.classList.toggle("noscroll");
-      nav.classList.toggle("active");
+      mobileNav.classList.toggle("active");
       button.classList.toggle("open");
     } else if (par === "closeNav") {
       body.classList.remove("noscroll");
-      nav.classList.remove("active");
+      mobileNav.classList.remove("active");
       button.classList.remove("open");
     }
   };
@@ -48,9 +49,9 @@ const Header = () => {
         initial="hidden"
         animate="visible"
       >
-        <motion.a href="/" className="logo">
+        <a href="/" className="logo">
           JhoellDevIt
-        </motion.a>
+        </a>
 
         <Nav toggleNav={toggleNav} />
 
