@@ -11,6 +11,7 @@ import ProjectDetails from "./components/ProjectDetails";
 // import project images
 import covidProjectImage from "./assets/covid-tracker.PNG";
 import weatherProjectImage from "./assets/weather-app.PNG";
+import moviesProjectImage from "./assets/movies-app.jpg";
 
 import { motion } from "framer-motion";
 
@@ -61,6 +62,18 @@ function App() {
     },
   };
 
+  const movieProjectObject = {
+    title: "Movies Information App",
+    desc: "A website for getting movies recommendations, overview along with realtime ratings. Search feature also available.",
+    stack: ["React", "TMDB API", "CSS"],
+    image: moviesProjectImage,
+    githubLink: "https://github.com/JhoellOpeyemi/movies-app",
+    siteLink: "https://connectmovies.netlify.app/",
+    urlTitle: function () {
+      return this.title.split(" ").join("-").toLowerCase();
+    },
+  };
+
   return (
     <>
       {loading ? (
@@ -83,6 +96,7 @@ function App() {
                   <Projects
                     covidProject={covidProjectObject}
                     weatherProject={weatherProjectObject}
+                    movieProject={movieProjectObject}
                   />
                   <Contact />
                 </motion.div>
@@ -94,6 +108,7 @@ function App() {
                 <ProjectDetails
                   covidProject={covidProjectObject}
                   weatherProject={weatherProjectObject}
+                  movieProject={movieProjectObject}
                 />
               }
             />

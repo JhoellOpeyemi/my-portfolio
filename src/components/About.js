@@ -168,7 +168,11 @@ const About = () => {
             variants={aboutImageVariants}
             animate={aboutImageAnimation}
           >
-            <img src={myImage} alt="" className="about-image" />
+            <img
+              src={myImage}
+              alt=" Head shot of Oluwapelumi smiling"
+              className="about-image"
+            />
           </motion.div>
 
           <motion.ul className="skills-group" ref={skillRef}>

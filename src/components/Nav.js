@@ -6,6 +6,8 @@ import { useInView } from "react-intersection-observer";
 // import motion -for animating elements, useAnimation - used with useInView for starting animations when elements are in the viewport
 import { motion, useAnimation } from "framer-motion";
 
+import resume from "../assets/resume.pdf";
+
 const Nav = ({ toggleNav }) => {
   const { ref, inView } = useInView();
 
@@ -59,7 +61,14 @@ const Nav = ({ toggleNav }) => {
         >
           Contact
         </a>
-        <button className="nav-link nav-link-btn">Resume</button>
+        <a
+          href={resume}
+          target={"_blank"}
+          rel="noreferrer"
+          className="nav-link nav-link-btn"
+        >
+          Resume
+        </a>
       </div>
 
       <div className="mobile-nav">
@@ -119,7 +128,9 @@ const Nav = ({ toggleNav }) => {
           >
             view my{" "}
             <a
-              href="#about"
+              href={resume}
+              target={"_blank"}
+              rel="noreferrer"
               className="mobile-nav-link"
               onClick={() => {
                 toggleNav("closeNav");

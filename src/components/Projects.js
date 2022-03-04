@@ -12,7 +12,7 @@ import Project from "./Project";
 // import  stylesheet
 import "../styles/projects.css";
 
-const Projects = ({ covidProject, weatherProject }) => {
+const Projects = ({ covidProject, weatherProject, movieProject }) => {
   const { ref: projectSectionRef, inView: projectSectionInView } = useInView({
     threshold: 0.2,
   });
@@ -76,6 +76,8 @@ const Projects = ({ covidProject, weatherProject }) => {
       <Project {...covidProject} />
 
       <Project {...weatherProject} />
+
+      <Project {...movieProject} />
     </motion.section>
   );
 };
