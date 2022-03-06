@@ -67,24 +67,60 @@ const ProjectDetails = ({ covidProject, weatherProject, movieProject }) => {
           <p className="project-detail-desc">{covidProjectDesc}</p>
 
           <div className="project-details-text">
+            <h3>Main Aim</h3>
+            <p>
+              The main aim of this app is to provide a medium that helps users
+              keep track of coronavirus by displaying data such as active cases,
+              number of deaths, etc.
+            </p>
+
+            <h3>How It Works</h3>
+            <p>
+              The app includes three sections - Home, Search and News. The home
+              section displays the world data. The search section help users
+              gets the data of desired country by inputting the name of the
+              country in a search box. As a user type characters into the search
+              box, the UI get updated and display buttons that contain real time
+              suggestions. The news section was added as an extra feature that
+              connect users to correct, verifiable and up-to-date news derived
+              from reliable sources.
+            </p>
             <p>
               This project was inspired by the outbreak and spread of
               coronavirus in early 2020.
             </p>
+
+            <h3>Technology Used</h3>
             <p>
-              The web app was built and developed with React - which is a
-              javaScript library for building user interfaces, React Router - a
-              standard library for routing in React, Chart.js - javaScript
-              library for drawing charts, and CSS for styling.
+              The web app was built and developed with{" "}
+              <span className="tech-used">React</span> - which is a javaScript
+              library for building user interfaces,{" "}
+              <span className="tech-used">React Router</span> - a standard
+              library for routing in React,{" "}
+              <span className="tech-used">Chart.js</span> - javaScript library
+              for drawing charts, and <span className="tech-used">CSS</span> for
+              styling.
             </p>
 
+            <h3>What I Learned</h3>
+            <ul className="learned-group">
+              <li>Developing reusable and simple code</li>
+              <li>Integrating charts with existing data using Chart.js</li>
+              <li>Fetching, manipulating and displaying data from an API</li>
+              <li>
+                Using React Router to link components thereby creating an
+                app-like environment
+              </li>
+            </ul>
+
             <ul className="links-group">
-              <h5 className="links-heading">Links:</h5>
+              <h3 className="links-heading">Links:</h3>
               <li>
                 <a
                   href={covidProjectSiteLink}
                   target={"_blank"}
                   rel="noreferrer"
+                  className="project-details-link"
                 >
                   Live Site
                 </a>
@@ -94,6 +130,7 @@ const ProjectDetails = ({ covidProject, weatherProject, movieProject }) => {
                   href={covidProjectGithubLink}
                   target={"_blank"}
                   rel="noreferrer"
+                  className="project-details-link"
                 >
                   Github
                 </a>
@@ -129,35 +166,60 @@ const ProjectDetails = ({ covidProject, weatherProject, movieProject }) => {
           <p className="project-detail-desc">{weatherProjectDesc}</p>
 
           <div className="project-details-text">
+            <h3>Main Aim</h3>
             <p>
-              This project works like any other weather app but it has
-              additional features like location-based weather details,
-              comprehensive list of weather details aside temperature, 7-day
-              weather report and theme switch.
-            </p>
-            <p>
-              The web app was built and developed with React - which is a
-              javaScript library for building user interfaces, WeatherBit API -
-              an application programming interface for getting weather details
-              and CSS for styling.
+              The main aim of this app is to provide weather information such as
+              humidity, maximum and minimum temperature, wind speed etc, to
+              users around the world
             </p>
 
+            <h3>How It Works</h3>
+            <p>
+              It works by getting your location (which you can either allow or
+              deny). When allowed to access location, it displays weather data
+              particular to your current location along with a 7-day report.
+              There is also a search functionality for viewing details of other
+              cities
+            </p>
+
+            <h3>Technology Used</h3>
+            <p>
+              The web app was built and developed with{" "}
+              <span className="tech-used">React</span> - which is a javaScript
+              library for building user interfaces,{" "}
+              <span className="tech-used">WeatherBit API</span> - an application
+              programming interface for getting weather details and{" "}
+              <span className="tech-used">CSS</span> for styling.
+            </p>
+
+            <h3>What I Learned</h3>
+            <ul className="learned-group">
+              <li>Getting users location using the Browser API</li>
+              <li>
+                Understanding and working with dates in JavaScript so as to
+                provide a 7-day report
+              </li>
+              <li>More about flexbox in CSS</li>
+            </ul>
+
             <ul className="links-group">
-              <h5 className="links-heading">Links:</h5>
+              <h3 className="links-heading">Links:</h3>
               <li>
                 <a
-                  href={weatherProjectSiteLink}
+                  href={covidProjectSiteLink}
                   target={"_blank"}
                   rel="noreferrer"
+                  className="project-details-link"
                 >
                   Live Site
                 </a>
               </li>
               <li>
                 <a
-                  href={weatherProjectGithubLink}
+                  href={covidProjectGithubLink}
                   target={"_blank"}
                   rel="noreferrer"
+                  className="project-details-link"
                 >
                   Github
                 </a>
@@ -190,18 +252,41 @@ const ProjectDetails = ({ covidProject, weatherProject, movieProject }) => {
           <p className="project-detail-desc">{movieProjectDesc}</p>
 
           <div className="project-details-text">
+            <h3>Main Aim</h3>
             <p>
-              This project was inspired by Netflix. Though it is not a movie
-              streaming app but a web app that allow users to view trending
-              movies, popular movies, top-rated movies along with realtime
-              rating and a brief overview of each movie
+              This project was made for movie lovers who love to view movie
+              ratings and overview before watching a movie.{" "}
+              <p> It was inspired by Netflix.</p>
             </p>
+
+            <h3>How It Works</h3>
             <p>
-              The web app was built and developed with React - which is a
-              javaScript library for building user interfaces, TMDB API - an
-              application programming interface for fetching details about
-              movies and CSS for styling.
+              Though it is not a movie streaming app, it is a web app that allow
+              users view movie ratings, overview and images under different
+              categories such as trending, popular, top-rated, recommended and
+              now playing. Once a category is clicked, a request is sent to the
+              API to fetch data for the category clicked and the UI gets updated
+              with the data received.
             </p>
+
+            <h3>Technology Used</h3>
+            <p>
+              The web app was built and developed with{" "}
+              <span className="tech-used">React</span> - which is a javaScript
+              library for building user interfaces,{" "}
+              <span className="tech-used">TMDB API</span> - an application
+              programming interface for fetching details about movies and{" "}
+              <span className="tech-used">CSS</span> for styling.
+            </p>
+
+            <h3>What I Learned</h3>
+            <ul className="learned-group">
+              <li>
+                Understanding the need for reusable code and developing it
+              </li>
+              <li>Fetching, manipulating and displaying data from an API</li>
+              <li>Understanding more about styling elements using flexbox</li>
+            </ul>
 
             <ul className="links-group">
               <h5 className="links-heading">Links:</h5>

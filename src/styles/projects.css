@@ -182,19 +182,34 @@ span.projects {
 }
 
 .project-details-text p {
-  padding: 0.8rem 0;
+  padding: 0.6rem 0;
+}
+
+.project-details-text h3 {
+  font-size: 1.4rem;
+  color: var(--lighter-text-color);
+  margin: 1rem 0 0;
+}
+
+.tech-used {
+  color: var(--lighter-text-color);
+}
+
+.learned-group li {
+  margin: 0.6rem 0;
 }
 
 .links-group {
   margin: 1.5rem 0;
 }
 
-.links-heading {
-  font-size: 1.3rem;
-}
-
 .links-group li {
   margin: 0.5rem 0 0;
+}
+
+.project-details-link {
+  color: var(--text-color);
+  text-decoration: underline;
 }
 
 .project-video-container {

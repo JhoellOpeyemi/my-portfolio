@@ -40,6 +40,7 @@ const Contact = () => {
           You have a project you want us to work on or you just want us to grab
           a drink together? Click the button below to leave a message 😊{" "}
         </p>
+
         <a
           href="mailto:jhoellpelumi@gmail.com"
           target={"_blank"}
