@@ -46,7 +46,6 @@
   --section-heading-text: rgba(131, 238, 255, 0.28);
 
   --font-size: 1.125rem;
-  --desktop-font-size: 1.2rem;
 
   --transition-delay: 300ms;
   --animation-duration: 0.8s;
@@ -131,10 +130,6 @@ li {
 
 /* Style for screen sizes larger than 859px */
 @media screen and (min-width: 53.7rem) {
-  body {
-    font-size: var(--desktop-font-size);
-  }
-
   .social-link:not(:last-child) {
     margin-right: 3rem;
   }

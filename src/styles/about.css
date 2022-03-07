@@ -65,7 +65,7 @@
 }
 
 .skills-intro {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--text-color);
   margin: 0 0 1.6rem;
   letter-spacing: 1px;
@@ -120,7 +120,7 @@
 
   .about-section-grid {
     display: grid;
-    grid-template-columns: 2fr, 1fr;
+    grid-template-columns: 1.6fr 1fr;
     grid-template-areas:
       "details image"
       "skill skill";
