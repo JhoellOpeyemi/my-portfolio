@@ -62,18 +62,18 @@
   height: 2.4rem;
 }
 
-/* Style for screen sizes larger than 790px */
-@media screen and (min-width: 49.375rem) {
+/* Style for screen sizes larger than 859px */
+@media screen and (min-width: 53.7rem) {
   .main-container {
     min-height: 85vh;
   }
 
   .hero-heading {
-    font-size: 3.5rem;
+    font-size: 3.3rem;
   }
 
   .hero-desc {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     max-width: 45rem;
   }
 

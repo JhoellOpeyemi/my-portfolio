@@ -54,8 +54,8 @@
   width: 100%;
 }
 
-/* Style for screen sizes larger than 790px */
-@media screen and (min-width: 49.375rem) {
+/* Style for screen sizes larger than 859px */
+@media screen and (min-width: 53.7rem) {
   .contact-section-heading {
     font-size: 4rem;
   }

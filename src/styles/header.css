@@ -166,8 +166,8 @@
   transform: rotate(45deg) translate(-5px, -10px);
 }
 
-/* Style for screen sizes larger than 790px */
-@media screen and (min-width: 49.375rem) {
+/* Style for screen sizes larger than 859px */
+@media screen and (min-width: 53.7rem) {
   /* Nav styles */
   .nav {
     background-color: transparent;

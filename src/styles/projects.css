@@ -235,8 +235,8 @@ span.projects {
   }
 }
 
-/* Style for screen sizes larger than 790px */
-@media screen and (min-width: 49.375rem) {
+/* Style for screen sizes larger than 859px */
+@media screen and (min-width: 53.7rem) {
   .projects-heading-group {
     flex-direction: row-reverse;
     text-align: right;
@@ -257,8 +257,8 @@ span.projects {
   }
 
   .projects-subtitle {
-    font-size: 1.7rem;
-    margin: 3rem 0 5rem;
+    font-size: 1.5rem;
+    margin: 3rem 0 4rem;
   }
 
   .project-detail-title {
@@ -273,10 +273,7 @@ span.projects {
   .project-detail-image {
     width: 80%;
   }
-}
 
-/* Style for screen sizes larger than 860px */
-@media screen and (min-width: 53.75rem) {
   .divider-line {
     width: 100%;
   }
