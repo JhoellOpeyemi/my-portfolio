@@ -34,6 +34,7 @@
 .about-desc {
   letter-spacing: 1px;
   margin-bottom: 1rem;
+  font-size: 1.09rem;
 }
 
 .image-wrapper {
@@ -46,8 +47,8 @@
 }
 
 .about-image {
-  width: 15rem;
-  height: 15rem;
+  width: 14.5rem;
+  height: 14.5rem;
   object-fit: cover;
   border-radius: 50%;
 }
@@ -87,8 +88,8 @@
 
 @media screen and (min-width: 31.25rem) {
   .about-image {
-    width: 16.5rem;
-    height: 16.5rem;
+    width: 15.5rem;
+    height: 15.5rem;
   }
 
   .skills-group {
@@ -142,10 +143,8 @@
   }
 
   .about-image {
-    display: block;
-    width: 17rem;
-    height: 17rem;
-    transform: scale(1);
+    width: 16rem;
+    height: 16rem;
     border-radius: 50%;
   }
 
