@@ -2,10 +2,10 @@
 .header {
   font-family: "SFMonoRegular";
   position: fixed;
-  z-index: 2;
   width: 90%;
   max-width: 72rem;
   background-color: var(--bg-color);
+  z-index: 10;
 }
 
 .logo-nav-wrapper {
